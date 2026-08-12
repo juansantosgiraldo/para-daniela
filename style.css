@@ -1,0 +1,268 @@
+/* ==========================
+   RESET
+========================== */
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+/* ===============================
+   ESTILOS GENERALES
+   =============================== */
+body {
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, #d8b4fe 0%, #c084fc 100%); 
+    font-family: 'Poppins', sans-serif;
+    color: #333;
+    overflow-x: hidden;
+    min-height: 100vh;
+}
+
+#particles {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+}
+
+/* --- ANIMACIÓN DE ROSAS CAYENDO --- */
+.rose {
+    position: absolute;
+    top: -50px; /* Empiezan arriba */
+    animation: caer linear infinite;
+    user-select: none;
+}
+
+@keyframes caer {
+    0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 0;
+    }
+    10% {
+        opacity: 1;
+    }
+    90% {
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(110vh) rotate(360deg); /* Caen hacia abajo */
+        opacity: 0;
+    }
+}
+
+/* ==========================
+   PANTALLA INICIAL
+========================== */
+#inicio{
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:20px;
+}
+
+.glass{
+    width:90%;
+    max-width:700px;
+    background:rgba(255,255,255,.12);
+    backdrop-filter:blur(15px);
+    border-radius:30px;
+    padding:45px;
+    text-align:center;
+    box-shadow:0 15px 40px rgba(0,0,0,.35);
+}
+
+.glass h3{
+    color:#FFD54F;
+    font-size:23px;
+    margin-bottom:15px;
+}
+
+.glass h1{
+    font-family:'Dancing Script',cursive;
+    font-size:82px;
+    margin-bottom:20px;
+}
+
+.glass p{
+    line-height:1.8;
+    font-size:20px;
+}
+
+/* ==========================
+   BOTÓN REGALO
+========================== */
+#giftButton{
+    margin-top:35px;
+    width:220px;
+    height:220px;
+    border:none;
+    border-radius:35px;
+    background:#FFD54F;
+    color:#6b3db8;
+    font-size:60px;
+    cursor:pointer;
+    transition:.4s;
+    animation:latido 2s infinite;
+}
+
+#giftButton span{
+    display:block;
+    margin-top:15px;
+    font-size:20px;
+    font-weight:bold;
+}
+
+#giftButton:hover{
+    transform:scale(1.08);
+    box-shadow:0 0 30px #FFD54F;
+}
+
+@keyframes latido{
+    0%{transform:scale(1);}
+    50%{transform:scale(1.08);}
+    100%{transform:scale(1);}
+}
+
+/* ==========================
+   CONTENIDO
+========================== */
+.hidden{
+    display:none;
+}
+
+#contenido{
+    padding:60px 25px;
+    text-align:center;
+    position: relative;
+    z-index: 2; /* Para que quede por encima de las rosas */
+}
+
+header h1{
+    font-size:48px;
+    margin-bottom:20px;
+}
+
+/* ==========================
+   CARRUSEL / FOTO
+========================== */
+.slider {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-width: 400px;
+  margin: 25px auto;
+  overflow: hidden;
+  border-radius: 20px;
+  box-shadow:0 15px 40px rgba(0,0,0,.2);
+}
+
+.slides {
+  width: 100%;
+  position: relative;
+}
+
+.slide {
+  display: block; 
+  width: 100%;
+  border-radius: 20px;
+  object-fit: cover;
+}
+
+/* ==========================
+   CARTA Y DETALLES
+========================== */
+.carta, .detalles-cena {
+    margin-top:60px;
+    padding:20px;
+}
+
+.carta h2, .detalles-cena h2 {
+    font-size:38px;
+    margin-bottom:25px;
+    color:#FFD54F;
+    text-shadow: 1px 1px 5px rgba(0,0,0,0.2);
+}
+
+.carta p, .detalles-cena p {
+    max-width:850px;
+    margin:auto;
+    line-height:2;
+    font-size:20px;
+    background:rgba(255,255,255,.15);
+    padding:30px;
+    border-radius:20px;
+    backdrop-filter:blur(10px);
+    box-shadow:0 10px 30px rgba(0,0,0,.1);
+}
+
+/* ==========================
+   BOTÓN FINAL (WHATSAPP)
+========================== */
+.final{
+    margin:90px 0;
+}
+
+#loveButton{
+    padding:20px 45px;
+    font-size:22px;
+    border:none;
+    border-radius:50px;
+    background:#FFD54F;
+    color:#6b3db8;
+    font-weight:bold;
+    cursor:pointer;
+    transition:.3s;
+}
+
+#loveButton:hover{
+    transform:scale(1.08);
+    box-shadow:0 0 30px #FFD54F;
+}
+
+/* ==========================
+   RESPONSIVE
+========================== */
+@media(max-width:768px){
+    .glass{
+        padding:30px;
+    }
+    .glass h1{
+        font-size:60px;
+    }
+    .glass p{
+        font-size:18px;
+    }
+    #giftButton{
+        width:180px;
+        height:180px;
+        font-size:50px;
+    }
+    header h1{
+        font-size:34px;
+    }
+    .carta h2, .detalles-cena h2 {
+        font-size:28px;
+    }
+    .carta p, .detalles-cena p {
+        font-size:17px;
+        padding:20px;
+    }
+    .slide{
+        border-radius:18px;
+    }
+    #loveButton{
+        font-size:18px;
+        padding:16px 30px;
+    }
+}
